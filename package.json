@@ -1,0 +1,50 @@
+{
+  "name": "youtube-express-dl",
+  "version": "1.1.0",
+  "description": "Downloader de músicas do YouTube",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "author": "Miguel Pereira Ramos",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.60",
+    "@electron-forge/maker-deb": "^6.0.0-beta.60",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.60",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.60",
+    "@electron-forge/maker-zip": "^6.0.0-beta.60",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.0.0-beta.60",
+    "electron": "6"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.10.1",
+    "@types/jquery": "^3.5.6",
+    "bootstrap": "^5.1.1",
+    "dotenv": "^10.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "jquery": "^3.6.0",
+    "ytdl-core": "^4.9.1",
+    "ytsr": "^3.5.3"
+  },
+  "config": {
+    "forge": {
+      "asar": true,
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "Downloader-de-músicas-do-YouTube"
+          }
+        }
+      ],
+      "electronWinstallerConfig": {
+        "name": "Downloader de músicas do YouTube",
+        "signWithParams": "/tr http://timestamp.digicert.com /td sha256 /fd sha256 /sha1 99c6ca99d9bb5222688a6de194ddd85b1205"
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+			crossorigin="anonymous"
+		></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+		/>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<title>Youtube Express Downloader</title>
+	</head>
+	<body>
+		<header class="bg-dark bg-opacity-75">
+			<nav
+				class="
+					navbar
+					d-flex
+					align-items-center
+					justify-content-start
+					container-md
+				"
+			>
+				<div class="col-auto">
+					<input
+						class="form-control"
+						type="file"
+						id="dir"
+						webkitdirectory
+						directory
+					/>
+				</div>
+			</nav>
+		</header>
+		<div
+			class="
+				main-container
+				bg-dark
+				d-flex
+				flex-column
+				align-items-center
+				justify-content-around
+			"
+		>
+			<div
+				class="
+					container-sm
+					h-75
+					bg-secondary bg-opacity-50
+					rounded
+					d-flex
+					flex-column
+					align-items-center
+					overflow-auto
+				"
+			>
+				<h1 class="text-white text-center p-2">Youtube Express Downloader</h1>
+				<div class="container main-list-container w-75">
+					<ul class="list-group main-list">
+						<li
+							class="
+								list-group-item
+								p-3
+								d-flex
+								align-items-end
+								justify-content-end
+							"
+						>
+							<div class="music-name-input w-100">
+								<input
+									autofocus
+									type="text"
+									class="form-control"
+									id="name-url"
+									placeholder="Nome/URL"
+								/>
+							</div>
+							<button class="delete-item btn btn-danger ms-2">
+								<i class="bi-trash"></i>
+							</button>
+						</li>
+					</ul>
+					<button class="add-btn btn btn-primary mt-2">Adicionar</button>
+					<button class="download-btn btn btn-success mt-2">
+						Baixar todas
+					</button>
+
+					<!-- Modal -->
+					<div
+						class="modal fade"
+						id="noFolderPathModal"
+						tabindex="-1"
+						aria-labelledby="noFolderPathModalLabel"
+						aria-hidden="true"
+					>
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="noFolderPathModalLabel">
+										Pasta para download
+									</h5>
+									<button
+										type="button"
+										class="btn-close"
+										data-bs-dismiss="modal"
+										aria-label="Close"
+									></button>
+								</div>
+								<div class="modal-body">
+									Selecione a pasta que será feito o download das
+									músicas.
+								</div>
+								<div class="modal-footer">
+									<button
+										type="button"
+										class="btn btn-primary close-modal"
+										data-bs-dismiss="modal"
+									>
+										Ok
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="./renderer.js"></script>
+</html>
