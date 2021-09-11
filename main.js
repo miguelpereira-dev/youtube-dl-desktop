@@ -14,7 +14,7 @@ function createWindow() {
 			nativeWindowOpen: true,
 		},
 	});
-	
+
 	mainWindow.loadFile(path.join(__dirname, './app/index.html'));
 }
 

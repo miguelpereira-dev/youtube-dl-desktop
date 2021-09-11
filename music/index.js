@@ -32,7 +32,7 @@ require('dotenv').config();
 
 async function main(dir, text) {
 	if (ytdl.validateURL(text)) {
-		await download(text);
+		await download(dir, text);
 		return;
 	}
 	const filters = (await ytsr.getFilters(text)).get('Type').get('Video');
@@ -44,7 +44,6 @@ async function main(dir, text) {
 async function download(dir, url) {
 	if (!dir) return;
 	const dirPath = dir;
-	console.log(dir);
 
 	const info = await ytdl.getInfo(url);
 	const format = ytdl.chooseFormat(info.formats, { filter: 'audioonly' });
