@@ -1,6 +1,11 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const youtube = require('./music/index');
+const Store = require('./store/Store');
+
+// Start
+const store = new Store();
+global.store = store;
 
 function createWindow() {
 	const mainWindow = new BrowserWindow({
